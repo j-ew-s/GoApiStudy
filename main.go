@@ -6,6 +6,8 @@ import (
 	"log"
 	"net/http"
 
+	"encoding/json"
+
 	"github.com/gorilla/mux"
 )
 
@@ -23,12 +25,21 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	fmt.Fprintf(w, "Hello - We had modified our code!  %q", html.EscapeString(r.URL.Path))
 }
 
-// This rout shows a List of To Do itens.
+/*
+	This rout shows a List of To Do itens.
+*/
 func TodoList(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Todo List")
+	todos := Todos {
+		Todo{Name: "Study Golang"},
+		Todo{Name: "Commit your study code"},
+	}
+
+	json.NewEncoder(w).Encode(todos)
 }
 
-// This Route ger a specific To Do item by ID
+/*
+  This Route ger a specific To Do item by ID
+*/
 func TodoDetail(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	id := vars["Id"]

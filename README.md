@@ -14,3 +14,6 @@ This command will download the src to your GOPATH\src\github.com\gorilla folder,
 ### 3° Commit
 Adding new routs to API. 
 There is a rout that handle a ID and show the ID requested.
+
+### 4° Commit
+Adding a TODO struct and returning JSON to API call to /Todo.
