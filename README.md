@@ -10,3 +10,7 @@ Gorilla Mux is package implements a request router and dispatcher (http://www.go
 
 To download Gorilla Mux  use go get github.com/gorilla/mux
 This command will download the src to your GOPATH\src\github.com\gorilla folder, and when your project need this src, it will import from this destination folder. 
+
+### 3° Commit
+Adding new routs to API. 
+There is a rout that handle a ID and show the ID requested.
