@@ -1,47 +1,13 @@
 package main
 
 import (
-	"fmt"
-	"html"
 	"log"
 	"net/http"
-
-	"encoding/json"
-
-	"github.com/gorilla/mux"
 )
 
 func main() {
 
-	router := mux.NewRouter().StrictSlash(true)
-	router.HandleFunc("/", Index)
-	router.HandleFunc("/Todo", TodoList)
-	router.HandleFunc("/Todo/{Id}", TodoDetail)
+	router := NewRouter()
+
 	log.Fatal(http.ListenAndServe(":8080", router))
-}
-
-//Index rout handler
-func Index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello - We had modified our code!  %q", html.EscapeString(r.URL.Path))
-}
-
-/*
-	This rout shows a List of To Do itens.
-*/
-func TodoList(w http.ResponseWriter, r *http.Request) {
-	todos := Todos {
-		Todo{Name: "Study Golang"},
-		Todo{Name: "Commit your study code"},
-	}
-
-	json.NewEncoder(w).Encode(todos)
-}
-
-/*
-  This Route ger a specific To Do item by ID
-*/
-func TodoDetail(w http.ResponseWriter, r *http.Request) {
-	vars := mux.Vars(r)
-	id := vars["Id"]
-	fmt.Fprintf(w, "The requested ID is %q", id)
 }
