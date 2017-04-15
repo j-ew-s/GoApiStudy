@@ -21,3 +21,6 @@ Adding a TODO struct and returning JSON to API call to /Todo.
 ### 5º Commit
 Segregating file in order to organize my structure
  - revision
+
+### 6° Commit
+Created a Handler to log API calls
