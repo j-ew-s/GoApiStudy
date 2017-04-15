@@ -26,6 +26,6 @@ func TodoList(w http.ResponseWriter, r *http.Request) {
 
 func TodoDetail(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
-	id := vars["ID"]
+	id := vars["Id"]
 	fmt.Fprintf(w, "The requested ID is : %q", id)
 }
