@@ -18,9 +18,6 @@ There is a rout that handle a ID and show the ID requested.
 ### 4° Commit
 Adding a TODO struct and returning JSON to API call to /Todo.
 
-<<<<<<< HEAD
 ### 5º Commit
 Segregating file in order to organize my structure
-=======
-### 5º
->>>>>>> bda782ab8a90ab12c14fd29c6a908207b8358b23
+ - revision
